@@ -6,17 +6,12 @@
         <div>
             <h1>THE SUPER TITLE</h1>
         </div>
-
+        {% for post in posts %}
         <div>
-            <p>published: date</p>
-            <h2>First post</h2>
-            <h4>Fusce faucibus dolor ultricies mi pulvinar, sit amet convallis ante faucibus.</h4>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <h4>{{ post.text|linebreaksbr }}</h4>
         </div>
-
-        <div>
-            <p>published: date</p>
-            <h2>Second post</h2>
-            <h4>Duis auctor tristique lectus a aliquam. Aenean imperdiet augue varius augue posuere, non ultricies dui iaculis.</h4>
-        </div>
+        {% endfor %}
     </body>
 </html>
